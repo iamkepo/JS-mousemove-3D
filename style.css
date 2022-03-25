@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css?family=Poiret+One|Six+Caps&display=swap');
+
+:root {
+  --size: 200px;
+  --main: rgb(253, 45, 45);
+}
+body {
+  background: rgba(22, 22, 22, 0.959);
+  color: var(--main);
+}
+.container {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+}
+.cube-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 3D CUBE PARAMETERS */
+.cube {
+  width:var(--size);
+  height:var(--size);
+  transform-style: preserve-3d;  
+  position: relative;
+}
+.side {
+  position:absolute;
+  opacity: 0.95;
+  width:var(--size);
+  height:var(--size);
+}
+#front {
+  background: url(./media/basic-pics/juan3.jpg) no-repeat center/cover;
+  transform: translateZ(calc(var(--size) / 2)); 
+}
+#top {
+  background: url(./media/basic-pics/juan2.jpg) no-repeat center/cover;
+  transform: rotateX(-270deg) translateY(calc(-1 * ( var(--size) / 2 ) ) );
+  transform-origin: top center;
+}
+#bottom {
+  background: url(./media/basic-pics/juan1.jpg) no-repeat center/cover;  
+  transform: rotateX(270deg) translateY(calc( var(--size) / 2) );
+  transform-origin: bottom center; 
+}
+#right {
+  background: url(./media/basic-pics/juan4.jpg) no-repeat center/cover;
+  transform: rotateY(-270deg) translateX(calc( var(--size) / 2) );
+  transform-origin: top right;
+}
+#left {
+  background: url(./media/basic-pics/juan5.jpg) no-repeat center/cover;
+  transform: rotateY(270deg) translateX(calc(-1 * ( var(--size) / 2 ) ));
+  transform-origin: center left;
+}
+#back {
+  background: url(./media/basic-pics/juan6.jpg) no-repeat center/cover;
+  transform: rotateY(-180deg) translateZ(calc(( var(--size) / 2 ) ));
+}
+
+
